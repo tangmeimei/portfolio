@@ -1,0 +1,38 @@
+$default: (
+    background_color1: #242124,
+    background_color2: #2e2c2e,
+    font_color1: white,
+    font_color2: #4e4b4e,
+    font_color3:white,
+    border_color:#363437,
+    icon_back_color: #017ffe,
+    border_color2: #23588c,
+);
+ 
+$thems: (
+     "light": (
+        background_color1: white,
+        background_color2: rgb(146, 140, 140),
+        font_color1: black,
+        font_color2: #a09ea0 ,
+        font_color3: white,
+        border_color:#363437,
+        icon_back_color:black,
+        border_color2: #23588c,
+     ),
+     "grey": (
+        background_color1:#334257, //背景色
+        background_color2: #2e2c2e,
+        font_color1: white, //字体颜色
+        font_color2: #5c8baf ,
+        font_color3: white,
+        border_color:#476072, //图像边框颜色
+        icon_back_color:#16C79A,
+        border_color2: #11698E, 
+     )
+)
+
+
+
+
+

@@ -1,0 +1,81 @@
+@import "../../styles/_handle.scss";
+
+.contactBox{
+    margin: 4rem 0rem 4rem 2rem;
+    font-size: 1.4rem;
+    display: flex;
+     .left{
+        margin-right: 5rem;
+        .wrapper {
+         margin-bottom: 3rem;
+         display: flex;
+        }
+        width: 30%;
+        .iconColor{
+            font-size: 1.8rem;
+            @include font_color("icon_back_color");
+            margin-right: 1.5rem;
+        }
+        .smallTitle{
+            color: #615b61;
+            padding-top: 0.5rem;
+        }
+       }
+}
+.right {
+    flex:1
+}
+.errorMessage {
+    background-color: #fff2f0;
+    color: #262424;
+    padding: 0.5rem;
+    border: 1px solid #ffccc7;
+    margin-top: 2rem;
+    transition: all 0.3s ease-in-out;
+}
+form {
+    display: flex;
+    margin-top: 2rem;
+    input,textarea {
+        display: block;
+        margin-bottom: 3rem;
+        width: 80%;
+        @include  background-color("background_color1");
+        outline: 0.2rem solid #6d6a6d;
+        border: none;
+        padding: 0.7rem;
+        color: aliceblue;
+        font-size: 1.4rem;
+    }
+    input:focus,textarea:focus{
+        outline: 0.2rem solid #007fff;
+    }
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: all .5s ease-in-out;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+  }
+
+
+
+ 
+
+@media only screen and (max-width: 768px) {
+.contactBox {
+    flex-direction: column !important;
+    
+}
+.right {
+    form{
+        display: flex;
+        flex-direction: column;
+    }
+    form div{
+        width: 100% !important;
+    }
+}
+
+}

@@ -1,0 +1,73 @@
+@import './_variable.scss';
+
+@mixin themeify {
+    @each $theme-name,$theme-map in $thems {
+        //!global 把局部变量强升为全局变量
+       $theme-map : $theme-map !global;  
+       [data-theme="#{$theme-name}"] & {
+        @content;
+       }
+    }
+};
+ 
+@function themeVar($key) {
+    @if (map-has-key($theme-map,$key)) {
+        @return map-get($theme-map,$key);
+    } @else { 
+        @debug  '>>>>>>>>>>>>>>>>>>>>>>>';
+        @debug  $default;
+        @debug  $key;
+        @debug map-get($default ,$key);
+       @return map-get($default ,$key );
+    }
+};
+
+
+@mixin background-color($color) {
+    @include themeify {
+        background-color: themeVar($color) !important;
+    }
+    background-color:map-get($default ,$color ) !important;
+};
+
+ 
+@mixin font_color($color) {
+   @include themeify {
+      color: themeVar($color)!important;
+   }
+   color: map-get($default ,$color ) !important;
+};
+
+ 
+@mixin border-color($color,$direction) {
+    @include themeify {
+      @if ($direction != '') {
+        border-#{$direction}-color : themeVar($color) !important;
+       } @else {
+        border-color : themeVar($color) !important;
+       }  
+    }
+    @if($direction != '' ) {
+        border-#{$direction}-color: map-get($default ,$color ) !important;
+    }@else {
+        border-color : map-get($default ,$color ) !important;
+    }
+};
+
+
+@mixin box-shadow($h-shadow,$v-shadow,$blur,$color) {
+    @include themeify {
+      box-shadow: $h-shadow $v-shadow $blur themeVar($color)!important;
+   }
+   box-shadow: 0px 0px 10px #2e73c3;
+  
+};
+
+     
+@mixin  dflex($flexDirection,$justifyContent,$alignItems) {
+    display: flex;
+    flex-direction: $flexDirection;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}
+

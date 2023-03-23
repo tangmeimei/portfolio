@@ -1,0 +1,22 @@
+ 
+.contextBox {
+    margin: 3rem 4rem 0px 0px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-column-gap: 8rem;
+   
+}
+.progressBox{
+    margin-top: 2rem;
+}
+
+
+@media only screen and (max-width: 768px){
+    
+    .contextBox {
+      grid-template-columns: repeat(1,1fr)  !important;
+      grid-row-gap: 2rem  !important;
+      margin-right: 2rem !important;
+    }
+     
+  }
